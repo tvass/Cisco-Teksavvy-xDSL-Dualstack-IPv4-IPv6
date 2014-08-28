@@ -1,7 +1,7 @@
 cisco-teksavvy-dsl-dualstack-ipv4-ipv6
 ======================================
 
-# Setup for my configuration
+## Setup for my configuration
 
 Sample configuration for Cisco IOS to run IPv4 and IPv6 over Teksavvy xDSL ISP.
 My setup is as follow. Please adjust to your needs :
@@ -10,13 +10,13 @@ My setup is as follow. Please adjust to your needs :
 * Dialer 1 is IPv4
 * Dialer 2 is IPv6
 
-# Got IPv6 ?
+## Got IPv6 ?
 
 To get IPv6 credentials, you need to contact Teksavvy at "ipv6@teksavvy.com".
 NOC will assign you two IPv6 subnet.
 
-* One is /64
-* Second is /56
+* One is /64 (2607:....:....:....::/64)
+* Second is /56 (2607:....:....:....::/56)
 
 The subnet "/64" will be for routing. Don't use it in your local network to avoid overlap.
 It should not appear in the configuration since i use "ipv6 address autoconfig".
@@ -25,7 +25,7 @@ First, split your /56 to use a smaller subnet. For example one "/64" is a goog c
 for your local network).
 
 In the sample configuration, i split my "/56" subnet into 256x "/64" and choose to use the first one.
-It is identified as "2607:....:....:....::/64". 
+It is identified as "2607:....:....:....::/64".
 
 You can use online tool to help with this :
 
@@ -36,14 +36,14 @@ Teksavvy IPv6 resolvers at this time are :
 * 2607:f2c0::1
 * 2607:f2c0::2
 
-# Security / ACL ?
+## Security / ACL ?
 
 Basic ACL are included to prevent local network to be exposed as each hosts will NOW have public IPv6.
 You should also disable IPv6 on all hosts you don't want to reachable.
 
 `echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 
-# Testing ?
+## Testing ?
 
 Quick test to check (ping Google Public DNS over IPv6) :
 
@@ -54,3 +54,5 @@ Quick test to check (ping Google Public DNS over IPv6) :
 `^C
 
 Also you can browse to https://ipv6.google.com !
+
+Thanks Teksavvy, you rock !
