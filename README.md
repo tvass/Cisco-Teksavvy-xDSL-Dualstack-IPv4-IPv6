@@ -1,5 +1,5 @@
-cisco-teksavvy-dsl-dualstack-ipv4-ipv6
-======================================
+Cisco and Teksavvy DSL dualstack IPv4 & IPv6
+============================================
 
 ## Setup for my configuration
 
@@ -9,6 +9,8 @@ My setup is as follow. Please adjust to your needs :
 * VLAN 1 is LAN
 * Dialer 1 is IPv4
 * Dialer 2 is IPv6
+
+I am using a Cisco series 800.
 
 ## Got IPv6 ?
 
