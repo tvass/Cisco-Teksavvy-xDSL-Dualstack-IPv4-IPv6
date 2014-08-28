@@ -41,16 +41,20 @@ Teksavvy IPv6 resolvers at this time are :
 Basic ACL are included to prevent local network to be exposed as each hosts will NOW have public IPv6.
 You should also disable IPv6 on all hosts you don't want to reachable.
 
-`echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+> echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 
 ## Testing ?
 
 Quick test to check (ping Google Public DNS over IPv6) :
 
 `[root@host ~]# ping6 2001:4860:4860::8888
+
 `PING 2001:4860:4860::8888(2001:4860:4860::8888) 56 data bytes
+
 `64 bytes from 2001:4860:4860::8888: icmp_seq=1 ttl=53 time=52.1 ms
+
 `64 bytes from 2001:4860:4860::8888: icmp_seq=2 ttl=53 time=52.0 ms
+
 `^C
 
 Also you can browse to https://ipv6.google.com !
