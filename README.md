@@ -1,12 +1,16 @@
 cisco-teksavvy-dsl-dualstack-ipv4-ipv6
 ======================================
 
+# Setup for my configuration
+
 Sample configuration for Cisco IOS to run IPv4 and IPv6 over Teksavvy xDSL ISP.
 My setup is as follow. Please adjust to your needs :
 
 * VLAN 1 is LAN
 * Dialer 1 is IPv4
 * Dialer 2 is IPv6
+
+# Got IPv6 ?
 
 To get IPv6 credentials, you need to contact Teksavvy at "ipv6@teksavvy.com".
 NOC will assign you two IPv6 subnet.
@@ -32,7 +36,14 @@ Teksavvy IPv6 resolvers at this time are :
 * 2607:f2c0::1
 * 2607:f2c0::2
 
+# Security / ACL ?
+
 Basic ACL are included to prevent local network to be exposed as each hosts will NOW have public IPv6.
+You should also disable IPv6 on all hosts you don't want to reachable.
+
+`echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+
+# Testing ?
 
 Quick test to check (ping Google Public DNS over IPv6) :
 
@@ -41,3 +52,5 @@ Quick test to check (ping Google Public DNS over IPv6) :
 `64 bytes from 2001:4860:4860::8888: icmp_seq=1 ttl=53 time=52.1 ms
 `64 bytes from 2001:4860:4860::8888: icmp_seq=2 ttl=53 time=52.0 ms
 `^C
+
+Also you can browse to https://ipv6.google.com !
